@@ -12,22 +12,31 @@
 			if (license.LicenseType == LicenseType.NoCheck)
 			{
 				if (activationData.Date > license.MaxActivations)
+				{
 					return false;
-
-				return true;
+				}
+				else
+				{
+					return true;
+				}
 			}
-			if (license.LicenseType == LicenseType.Check)
+			else if (license.LicenseType == LicenseType.Check)
 			{
 				if (activationData.Date > license.MaxActivations)
 					return false;
-
-				if (license.Activations.Count != license.LimitOfActivations)
+				else if (license.Activations.Count != license.LimitOfActivations)
 					return true;
-
-				return license.Activations.Contains(activationData.HardwareId);
+				else if (!license.Activations.Contains(activationData.HardwareId))
+					return false;
+				else
+				{
+					return true;
+				}
 			}
-
-			return false;
+			else
+			{
+				return false;
+			}
 		}
 	}
 }
