@@ -4,6 +4,11 @@
 	{
 		public static bool CheckActivation(ActivationData activationData, License license)
 		{
+			//change the solution so the following code will work instead of the uncommented one ( that should be gone)
+			/*
+				IChecker checker = CheckerFactory.CreateChecker(license.LicenseType);
+				checker.Check(activationData, license);
+			 */
 			if (license.LicenseType == LicenseType.NoCheck)
 			{
 				if (activationData.Date > license.MaxActivations)
@@ -16,13 +21,10 @@
 				if (activationData.Date > license.MaxActivations)
 					return false;
 
-				if (license.Activations.Count == license.LimitOfActivations)
-				{
-					if (!license.Activations.Contains(activationData.HardwareId))
-						return false;
-				}
+				if (license.Activations.Count != license.LimitOfActivations)
+					return true;
 
-				return true;
+				return license.Activations.Contains(activationData.HardwareId);
 			}
 
 			return false;
