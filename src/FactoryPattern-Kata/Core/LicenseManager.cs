@@ -5,11 +5,11 @@
 		public static bool CheckActivation(ActivationData activationData, License license)
 		{
 			//change the solution so the following code will work instead of the uncommented one , lines 12-30, that should be gone )
-			/*
+			
 				IChecker checker = CheckerFactory.CreateChecker(license.LicenseType);
-				checker.Check(activationData, license);
-			 */
-			if (license.LicenseType == LicenseType.NoCheck)
+				return checker.Check(activationData, license);
+			 
+			/*if (license.LicenseType == LicenseType.NoCheck)
 			{
 				if (activationData.Date > license.MaxActivations)
 				{
@@ -36,7 +36,7 @@
 			else
 			{
 				return false;
-			}
+			}*/
 		}
 	}
 }
