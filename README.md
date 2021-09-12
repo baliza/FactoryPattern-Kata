@@ -4,10 +4,10 @@
 ### Contexto
 El código se basa en el sistema de licencias de aviacion. Hay dos tipos de licencias:
 
-* Con hardware check: se tiene en cuenta la identificacion del dispositico, y si el numero maximo de dispositivos es limitado. Si el dispositivo solicitado ya está activo, la licencia se facilita de nuevo y la cuenta de dispositivos activos no se aumenta
+* Con hardware check: se tiene en cuenta la identificacion del dispositivo, y si el numero maximo de dispositivos es limitado. Si el dispositivo solicitado ya está activo, la licencia se facilita de nuevo y la cuenta de dispositivos activos no se aumenta
 
 
-* Con hardware check: el identificador del dispositivo no se toma en cuenta y el numero de dispositivos activos es ilimitado.
+* Con software check: el identificador del dispositivo no se toma en cuenta y el numero de dispositivos activos es ilimitado.
 
 En ambos casos se comprueba si ha espirado la licencia.
 
